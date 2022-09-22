@@ -39,6 +39,39 @@ select(litters_df, -pups_survive)
 ```
 
 
+you can rename variables
+
+```{r}
+select(litters_df, GROUP = group, LiTtEr_number = litter_number)
+```
+
+
+```{r}
+rename(litters_df, GROUP = group, LITTER_NUMBER = litter_number)
+```
+
+
+##helper functions
+
+`start_with()` , `end_with()` , `contains()`
+
+```{r}
+select(litters_df, starts_with("gd"))
+select(litters_df, ends_with("weight"))
+```
+
+
+`?select_helper`
+
+order
+
+```{r}
+select(litters_df, litter_number, pups_survive, everything())
+```
+
+
+
+
 
 
 
