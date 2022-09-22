@@ -1,0 +1,46 @@
+---
+title: "data_manipulation with `dplyr`"
+output: github_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, fig.width = 6, fig.asp = 0.6, out.width = "90%")
+
+```
+
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(readxl)
+library(haven)
+```
+
+
+```{r}
+litters_df = read_csv("data/FAS_litters.csv")
+litters_df = janitor::clean_names(litters_df)
+```
+
+
+### `select`
+
+```{r}
+select(litters_df, group, litter_number,
+       gd0_weight, pups_born_alive)
+
+select(litters_df, group:gd_of_birth)
+```
+
+
+remove
+
+```{r}
+select(litters_df, -pups_survive)
+```
+
+
+
+
+
+
+
